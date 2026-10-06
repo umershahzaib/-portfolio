@@ -3,13 +3,19 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import Image from 'next/image';
 
 export default function Projects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const projects = [
+    {
+      title: 'AI Interview Simulator',
+      description: 'Interactive AI-powered interview preparation platform with real-time feedback and personalized coaching for job seekers.',
+      tags: ['AI', 'Interview Prep', 'Next.js', 'Voice AI'],
+      gradient: 'from-blue-400 via-indigo-500 to-purple-600',
+      link: 'https://ai-interview-simulator-ivory.vercel.app/',
+    },
     {
       title: 'PromptFlow',
       description: 'AI prompt discovery platform enabling users to explore, share, and optimize prompts for various LLM applications.',

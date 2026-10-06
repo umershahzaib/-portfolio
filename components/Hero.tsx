@@ -12,8 +12,24 @@ export default function Hero() {
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-16">
-      <div className="max-w-7xl mx-auto text-center">
+    <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-16 relative">
+      <motion.div
+        className="absolute inset-0 z-0 opacity-20"
+        initial={{ opacity: 0, scale: 1.1 }}
+        animate={{ opacity: 0.2, scale: 1 }}
+        transition={{ duration: 1.2 }}
+      >
+        <Image
+          src="/project-image.png"
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-900/90 to-slate-950/95"></div>
+      </motion.div>
+
+      <div className="max-w-7xl mx-auto text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -25,13 +41,14 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            <div className="w-72 h-72 mx-auto rounded-full overflow-hidden border-4 border-emerald-400 shadow-2xl shadow-emerald-500/50">
+            <div className="w-80 h-80 mx-auto rounded-full overflow-hidden border-4 border-emerald-400 shadow-2xl shadow-emerald-500/50 ring-4 ring-emerald-400/20">
               <Image
                 src="/project-image.png"
                 alt="Umer Shahzaib"
-                width={288}
-                height={288}
+                width={320}
+                height={320}
                 className="object-cover w-full h-full"
+                priority
               />
             </div>
           </motion.div>
